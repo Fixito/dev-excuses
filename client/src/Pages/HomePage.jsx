@@ -2,7 +2,7 @@ import Generator from '../components/Generator.jsx';
 
 const HomePage = () => {
   return (
-    <main className='container'>
+    <main className='container home'>
       <Generator />
     </main>
   );
