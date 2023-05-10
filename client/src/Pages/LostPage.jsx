@@ -13,11 +13,11 @@ const LostPage = () => {
   return (
     <main className='lost-container'>
       <div>
-        <h1>I&apos;m lost</h1>
         <iframe
           src='https://giphy.com/embed/6uGhT1O4sxpi8'
           className='gif'
         ></iframe>
+        <h1>I&apos;m lost</h1>
       </div>
     </main>
   );
