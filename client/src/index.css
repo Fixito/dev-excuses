@@ -11,3 +11,23 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.5;
 }
+
+/* 
+==========
+Lost page
+==========
+*/
+.lost-container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.lost-container h1 {
+  text-align: center;
+}
+
+.gif {
+  pointer-events: none;
+  border: 0px;
+}
