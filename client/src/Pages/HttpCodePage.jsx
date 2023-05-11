@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import autoFetch from '../axios/custom.js';
+import Loader from '../components/Loader.jsx';
 
 const HttpCodePage = () => {
   const [excuse, setExcuse] = useState(null);
@@ -20,7 +21,7 @@ const HttpCodePage = () => {
   if (status === 'idle' || status === 'pending') {
     return (
       <main className='full-page grid-center'>
-        <div>Loading...</div>
+        <Loader />
       </main>
     );
   }
