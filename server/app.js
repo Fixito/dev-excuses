@@ -23,8 +23,8 @@ app.use(
 
 // security librairies
 app.use(helmet());
-app.use(cors());
 app.use(xss());
+app.use(cors());
 
 app.use(express.json());
 

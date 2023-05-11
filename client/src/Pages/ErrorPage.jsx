@@ -3,13 +3,13 @@ import img from '../assets/page-not-found.svg';
 
 const ErrorPage = () => {
   return (
-    <main className='container not-found-container'>
-      <div>
-        <img src={img} alt='' className='not-found-img' />
-        <p>
+    <main className='full-page grid-center'>
+      <section>
+        <img src={img} alt='' className='error-img' />
+        <p className='text-center'>
           Perdu ? <Link to='/'>Retourner à l&apos;accueil</Link>
         </p>
-      </div>
+      </section>
     </main>
   );
 };

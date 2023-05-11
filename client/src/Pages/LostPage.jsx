@@ -11,14 +11,14 @@ const LostPage = () => {
   }, [navigate]);
 
   return (
-    <main className='lost-container'>
-      <div>
+    <main className='full-page grid-center'>
+      <section>
         <iframe
           src='https://giphy.com/embed/6uGhT1O4sxpi8'
           className='gif'
         ></iframe>
-        <h1>I&apos;m lost</h1>
-      </div>
+        <h1 className='text-center'>I&apos;m lost</h1>
+      </section>
     </main>
   );
 };

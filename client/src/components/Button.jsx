@@ -1,7 +1,7 @@
-const Button = () => {
+const Button = ({ fetchRandomExcuse }) => {
   return (
-    <button type='button' className='btn'>
-      Button
+    <button type='button' className='btn' onClick={fetchRandomExcuse}>
+      Get an excuse
     </button>
   );
 };

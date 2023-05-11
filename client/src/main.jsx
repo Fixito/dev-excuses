@@ -8,7 +8,7 @@ import './index.css';
 const router = createBrowserRouter([
   { path: '/', element: <HomePage /> },
   { path: '/lost', element: <LostPage /> },
-  { path: '/http-code/:statusCode', element: <HttpCodePage /> },
+  { path: '/:httpCode', element: <HttpCodePage /> },
   { path: '*', element: <ErrorPage /> }
 ]);
 
