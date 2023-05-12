@@ -7,32 +7,47 @@ const HomePage = () => {
   const [excuse, setExcuse] = useState(null);
   const [status, setStatus] = useState('idle');
 
-  const fetchRandomExcuse = async () => {
+  const fetchRandomExcuse = async (prevExcuse) => {
     const randomTime = Math.floor(Math.random() * 5 + 1) * 1000;
     setStatus('pending');
 
     try {
-      const {
-        data: { excuse }
+      let {
+        data: { excuse: newExcuse }
       } = await autoFetch('/random');
-      setExcuse(excuse);
+
+      while (prevExcuse === newExcuse) {
+        const { data } = await autoFetch('/random');
+        newExcuse = data.excuse;
+      }
+
+      setExcuse(newExcuse);
 
       setTimeout(() => {
         setStatus('resolved');
       }, randomTime);
     } catch (error) {
       console.log(error.response.data.msg);
+      setStatus('rejected');
     }
   };
 
   useEffect(() => {
-    fetchRandomExcuse();
+    fetchRandomExcuse(excuse);
   }, []);
 
   if (status === 'idle' || status === 'pending') {
     return (
       <main className='full-page grid-center'>
         <Loader />
+      </main>
+    );
+  }
+
+  if (status == 'rejected') {
+    return (
+      <main className='full-page grid-center'>
+        <h1>Une erreur s&apos;est produite, veuillez réessayer plus tard...</h1>
       </main>
     );
   }
