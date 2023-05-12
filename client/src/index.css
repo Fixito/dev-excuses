@@ -120,6 +120,17 @@ img {
   box-shadow: var(--shadow-2);
 }
 
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary-500);
+  color: var(--primary-500);
+}
+
+.btn-outline:hover {
+  background: var(--primary-500);
+  color: var(--white);
+}
+
 /** form */
 .card {
   width: var(--view-width);
@@ -141,7 +152,6 @@ img {
 .loading {
   width: 5rem;
   height: 5rem;
-  margin: 0 auto;
   border: 5px solid var(--grey-300);
   border-radius: 50%;
   border-top-color: var(--primary-500);
@@ -183,7 +193,7 @@ Lost page
   animation: fadeIn 2s ease-in;
 }
 
-@keyframes slideToLeft {
+@keyframes slideFromTop {
   from {
     transform: translatey(-100%);
     opacity: 0;
@@ -195,8 +205,19 @@ Lost page
   }
 }
 
-.slide-to-left {
-  animation: slideToLeft 1s ease 2s backwards;
+.slide-from-top {
+  animation: slideFromTop 1s ease 2s backwards;
+}
+
+/* 
+==========
+Home page
+==========
+*/
+.btn-container {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 /* 

@@ -10,7 +10,10 @@ const Generator = ({ excuse, fetchRandomExcuse, status }) => {
       ) : (
         <Loader />
       )}
-      <Button fetchRandomExcuse={fetchRandomExcuse} />
+      <div className='btn-container slide-from-top'>
+        <Button fetchRandomExcuse={fetchRandomExcuse} />
+        <button className='btn btn-outline'>Add an excuse</button>
+      </div>
     </article>
   );
 };
