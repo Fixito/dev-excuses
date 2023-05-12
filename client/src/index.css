@@ -169,7 +169,7 @@ Lost page
 ==========
 */
 
-@keyframes fade-in {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -180,8 +180,25 @@ Lost page
 }
 
 .fade-in {
-  animation: fade-in 1s ease-in;
+  animation: fadeIn 2s ease-in;
 }
+
+@keyframes slideToLeft {
+  from {
+    transform: translatey(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-to-left {
+  animation: slideToLeft 1s ease 2s backwards;
+}
+
 /* 
 ==========
 Lost page
