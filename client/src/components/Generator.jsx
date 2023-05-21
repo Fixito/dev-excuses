@@ -1,5 +1,4 @@
 import Button from './Button.jsx';
-import Loader from './Loader.jsx';
 import Modal from './Modal.jsx';
 
 const Generator = ({ excuse, fetchRandomExcuse, status }) => {

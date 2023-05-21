@@ -1,14 +1,33 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import React from 'react';
+import Form from './Form.jsx';
+import autoFetch from '../axios/custom.js';
+import { toast } from 'react-toastify';
 
 const Modal = () => {
   const [open, setOpen] = React.useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const { tag, message } = e.target.elements;
+
+    if (!tag.value || !message.value) {
+      toast.error('Please provide values.');
+      return;
+    }
+
+    try {
+      await autoFetch.post('/', {
+        tag: tag.value,
+        message: message.value
+      });
+      toast.success('Excuse added.');
+    } catch (err) {
+      console.log(err);
+    }
+
     setOpen(false);
-    console.log('submitted');
   };
 
   return (
@@ -18,21 +37,7 @@ const Modal = () => {
         <Dialog.Overlay className='modal-overlay' />
         <Dialog.Content className='modal-content'>
           <Dialog.Title className='modal-title'>Add an excuse</Dialog.Title>
-          <form onSubmit={handleSubmit}>
-            <fieldset className='form-fieldset'>
-              <label htmlFor='message' className='form-label'>
-                Excuse:
-              </label>
-              <textarea
-                name='message'
-                id='message'
-                className='form-textarea'
-              ></textarea>
-            </fieldset>
-            <button type='submit' className='btn'>
-              Add
-            </button>
-          </form>
+          <Form handleSubmit={handleSubmit} />
           <Dialog.Close asChild>
             <button className='close-btn' aria-label='Close'>
               <Cross2Icon />
