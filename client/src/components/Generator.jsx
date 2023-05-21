@@ -9,7 +9,7 @@ const Generator = ({ excuse, fetchRandomExcuse, status }) => {
       {status === 'resolved' ? (
         <p className='text italic'>{excuse?.message}</p>
       ) : (
-        <Loader />
+        <div className='skeleton skeleton-text'></div>
       )}
       <div className='btn-container slide-from-top'>
         <Button fetchRandomExcuse={fetchRandomExcuse} />
