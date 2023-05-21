@@ -1,5 +1,6 @@
 import Button from './Button.jsx';
 import Loader from './Loader.jsx';
+import Modal from './Modal.jsx';
 
 const Generator = ({ excuse, fetchRandomExcuse, status }) => {
   return (
@@ -12,7 +13,7 @@ const Generator = ({ excuse, fetchRandomExcuse, status }) => {
       )}
       <div className='btn-container slide-from-top'>
         <Button fetchRandomExcuse={fetchRandomExcuse} />
-        <button className='btn btn-outline'>Add an excuse</button>
+        <Modal />
       </div>
     </article>
   );
