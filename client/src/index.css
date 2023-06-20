@@ -102,6 +102,10 @@ small,
   font-style: italic;
 }
 
+.mask {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -333,47 +337,40 @@ fieldset {
 
 /* 
 ==========
-Lost page
+Home page
 ==========
 */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+.hide {
+  animation-duration: 1.7s;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-fill-mode: forwards;
+}
 
+@keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
 
 .fade-in {
-  animation: fadeIn 2s ease-in;
+  opacity: 0;
+  animation-name: fadeIn;
 }
 
-@keyframes slideFromTop {
-  from {
-    transform: translatey(-100%);
-    opacity: 0;
-  }
-
+@keyframes slideDown {
   to {
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.slide-from-top {
-  animation: slideFromTop 1s ease 2s backwards;
+.slide-down {
+  transform: translateY(-200%);
+  animation-name: slideDown;
+  animation-delay: 2s;
 }
 
-/* 
-==========
-Home page
-==========
-*/
 .btn-container {
-  margin-top: 1rem;
   display: flex;
   gap: 1rem;
 }
